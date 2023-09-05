@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ClinicaApp</string>
+
+    <!-- Pantalla Principal -->
+    <string name="directorio_noticias">Noticias</string>
+    <string name="directorio_servicios">Servicios</string>
+    <string name="directorio_medicos">Médicos</string>
+    <string name="directorio_contacto">Contacto</string>
+
+    <string name="login">Iniciar Sesión</string>
+    <string name="recuperar_contraseña">Recuperar contraseña</string>
+
 </resources>
