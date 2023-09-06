@@ -90,7 +90,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/servicios_directorio"/>
+                        android:src="@drawable/servicios_directorio_min"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -127,7 +127,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/medico_directorio"/>
+                        android:src="@drawable/medico_directorio_min"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -163,7 +163,7 @@
 
                     <ImageView
                         android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_height="110dp"
                         android:src="@drawable/contacto_directorio"/>
 
                     <TextView
