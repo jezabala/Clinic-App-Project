@@ -11,11 +11,11 @@ class SignUpActivity : AppCompatActivity() {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val name = binding.etName
-        val date = binding.etFechaNacimiento
-        val identification = binding.etIdentificacion
-        val phoneNumber = binding.etTelefono
-        val gender = binding.rgGender.checkedRadioButtonId
+        binding.etName
+        binding.etFechaNacimiento
+        binding.etIdentificacion
+        binding.etTelefono
+        binding.rgGender.checkedRadioButtonId
 
         binding.btnSignUp.setOnClickListener {  }
 
