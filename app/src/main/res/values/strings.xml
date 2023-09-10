@@ -15,4 +15,19 @@
 
     <string name="repassword">¿Olvidaste tu contraseña?</string>
 
+    <string name="nombre">Nombre y Apellido:</string>
+    <string name="numero_identificacion">Número de Cedula:</string>
+
+    <string name="numero_telefono">Telefono:</string>
+
+    <string name="birth">Fecha de nacimiento:</string>
+
+    <string name="gender">Genero:</string>
+
+    <string name="sign_up">Registrarse</string>
+
+    <string name="male">Masculino</string>
+
+    <string name="female">Femenino</string>
+
 </resources>
