@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding.directMedicos.setOnClickListener { showDirectMedicos() }
         binding.directContacto.setOnClickListener { showDirectContacto() }
         binding.btnLogin.setOnClickListener { showLogInForm() }
+        binding.tvSignUp.setOnClickListener { showSignUp() }
 
     }
 
@@ -40,5 +41,10 @@ class MainActivity : AppCompatActivity() {
     private fun showDirectMedicos(){}
 
     private fun showDirectContacto(){}
+
+    private fun showSignUp(){
+        val intent = Intent(this, SignUpActivity::class.java)
+        startActivity(intent)
+    }
 
 }
