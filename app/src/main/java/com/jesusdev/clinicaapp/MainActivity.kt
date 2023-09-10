@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-         //ola dios soy yo denuevo
+
         binding.directNoticias.setOnClickListener {  }
         binding.directServicios.setOnClickListener {  }
         binding.directMedicos.setOnClickListener {  }
