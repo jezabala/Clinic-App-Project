@@ -1,5 +1,6 @@
 package com.jesusdev.clinicaapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -14,14 +15,30 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val view = binding.root
+        setContentView(view)
 
-        binding.directNoticias.setOnClickListener {  }
-        binding.directServicios.setOnClickListener {  }
-        binding.directMedicos.setOnClickListener {  }
-        binding.directContacto.setOnClickListener {  }
-        binding.btnLogin.setOnClickListener {  }
+        binding.directNoticias.setOnClickListener { showDirectNoticias() }
+        binding.directServicios.setOnClickListener { showDirectServicios() }
+        binding.directMedicos.setOnClickListener { showDirectMedicos() }
+        binding.directContacto.setOnClickListener { showDirectContacto() }
+        binding.btnLogin.setOnClickListener { showLogInForm() }
 
     }
+
+    // Estas funciones permiten conectar la pantalla principal
+    // con las otras pantallas
+    private fun showLogInForm(){
+        val intent = Intent(this, LogInActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun showDirectNoticias(){}
+
+    private fun showDirectServicios(){}
+
+    private fun showDirectMedicos(){}
+
+    private fun showDirectContacto(){}
 
 }

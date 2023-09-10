@@ -10,4 +10,9 @@
     <string name="login">Iniciar Sesión</string>
     <string name="recuperar_contraseña">Recuperar contraseña</string>
 
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
+
+    <string name="repassword">¿Olvidaste tu contraseña?</string>
+
 </resources>
