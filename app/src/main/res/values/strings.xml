@@ -31,4 +31,11 @@
 
     <string name="female">Femenino</string>
 
+    <!-- Inicio Pacientes -->
+    <string name="text_pacientes">Bienvenido Paciente,</string>
+    <string name="programar_citas">Programar citas médicas</string>
+    <string name="historial_citas">Historial de citas programadas</string>
+    <string name="tratamientos">Tratamientos</string>
+    <string name="historias_clinicas">Historias clínicas</string>
+
 </resources>
