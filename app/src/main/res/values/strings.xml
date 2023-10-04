@@ -57,7 +57,9 @@
     <string name="pc_nombre_paciente">Nombre y Apellido</string>
     <string name="pc_identificacion_paciente">Cedula de Identidad</string>
     <string name="pc_edad_paciente">Edad</string>
-    <string name="pc_fecha_cita">Fecha de la cita</string>
+    <string name="pc_fecha_cita">Fecha de la cita.</string>
+    <string name="pc_historias">Añadir Historia Médica.</string>
+    <string name="pc_add">Añadir</string>
     <string name="pc_programar_cita">Programar Cita</string>
 
 
