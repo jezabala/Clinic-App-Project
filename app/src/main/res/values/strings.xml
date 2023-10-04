@@ -52,5 +52,14 @@
     <string name="admin_menu3">Historial de Citas</string>
     <string name="admin_menu4">Control de Notificaciones</string>
 
+    <!-- Programar citas medicas -->
+    <string name="pc_texto_citas">Programar Cita Médica: </string>
+    <string name="pc_nombre_paciente">Nombre y Apellido</string>
+    <string name="pc_identificacion_paciente">Cedula de Identidad</string>
+    <string name="pc_edad_paciente">Edad</string>
+    <string name="pc_fecha_cita">Fecha de la cita</string>
+    <string name="pc_programar_cita">Programar Cita</string>
+
+
 
 </resources>

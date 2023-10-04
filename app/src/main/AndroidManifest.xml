@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ClinicaApp"
         tools:targetApi="31">
         <activity
+            android:name=".ProgramarCitasActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainAdminActivity"
             android:exported="false" />
         <activity
