@@ -46,9 +46,11 @@
     <string name="medicos_menu4">Historial Citas Completadas</string>
 
     <!-- Inicio Administrador -->
+    <string name="text_admin">Bienvenido Administrador,</string>
     <string name="admin_menu1">Medicos y Usuarios</string>
     <string name="admin_menu2">Reportes de Citas Completadas</string>
     <string name="admin_menu3">Historial de Citas</string>
     <string name="admin_menu4">Control de Notificaciones</string>
+
 
 </resources>
