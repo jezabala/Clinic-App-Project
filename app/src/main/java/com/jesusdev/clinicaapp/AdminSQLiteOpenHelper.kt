@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper
 
 class AdminSQLiteOpenHelper(private val context: Context): SQLiteOpenHelper(context, "clinic_app", null, 1){
     override fun onCreate(db: SQLiteDatabase?) {
-        db!!.execSQL("CREATE TABLE usuarios(user_id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, " +
+        db!!.execSQL("CREATE TABLE usuarios(user_id INT PRIMARY KEY, username TEXT, " +
                 "user_email TEXT, user_password TEXT, user_gender TEXT, user_rol TEXT)")
     }
 
@@ -20,7 +20,7 @@ class AdminSQLiteOpenHelper(private val context: Context): SQLiteOpenHelper(cont
         //db.close()
     }
 
-    fun newUser(username: String, email: String, password: String, gender: String, rol: String){
+    /*fun newUser(username: String, email: String, password: String, gender: String, rol: String){
         val db = this.writableDatabase
         try {
             db.beginTransaction()
@@ -39,6 +39,6 @@ class AdminSQLiteOpenHelper(private val context: Context): SQLiteOpenHelper(cont
             db.endTransaction()
             cerrandoBD(db)
         }
-    }
+    } */
 
 }

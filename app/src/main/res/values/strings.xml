@@ -16,12 +16,13 @@
 
     <string name="repassword">¿Olvidaste tu contraseña?</string>
 
-    <string name="nombre">Nombre y Apellido:</string>
+    <string name="nombreusuario">Nombre de Usuario:</string>
     <string name="numero_identificacion">Número de Cedula:</string>
+    <string name="rol_usuario">Rol de Usuario:</string>
 
     <string name="numero_telefono">Telefono:</string>
 
-    <string name="birth">Fecha de nacimiento:</string>
+    <string name="email">Correo electronico:</string>
 
     <string name="gender">Genero:</string>
 

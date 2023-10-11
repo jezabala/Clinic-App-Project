@@ -63,70 +63,70 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/nombre"
+                android:text="@string/nombreusuario"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
 
             <EditText
-                android:id="@+id/etName"
-                android:layout_width="300dp"
+                android:id="@+id/etNameUser"
+                android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Introduce tu nombre"
+                android:hint="Introduce nombre de usuario"
                 android:inputType="text" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/birth"
+                android:text="@string/email"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
 
             <EditText
-                android:id="@+id/etFechaNacimiento"
-                android:layout_width="wrap_content"
+                android:id="@+id/etEmailUser"
+                android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Introduce tu nacimiento"
+                android:hint="Introduce correo electronico"
                 android:inputType="date" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/numero_identificacion"
+                android:text="@string/password"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etIdentificacion"
-                android:layout_width="180dp"
+                android:id="@+id/etPassword"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Introduce tu cedula"
+                android:hint="Introduce tu contraseña"
                 android:inputType="text" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/numero_telefono"
+                android:text="@string/rol_usuario"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etTelefono"
+                android:id="@+id/etRoleUser"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Introduce tu telefono"
+                android:hint="Introduce tu rol"
                 android:inputType="number" />
 
             <TextView
