@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Introduce correo electronico"
-                android:inputType="date" />
+                android:inputType="text" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -127,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Introduce tu rol"
-                android:inputType="number" />
+                android:inputType="text" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -141,7 +141,8 @@
             <RadioGroup
                 android:id="@+id/rgGender"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:checkedButton="@id/rbMale">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -153,7 +154,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:buttonTint="@color/main_color"
-                        android:checked="true"
                         android:text="@string/male"
                         android:textSize="18sp"
                         android:textStyle="bold"
