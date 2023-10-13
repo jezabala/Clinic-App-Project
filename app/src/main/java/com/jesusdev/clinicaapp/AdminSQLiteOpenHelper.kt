@@ -16,7 +16,7 @@ class AdminSQLiteOpenHelper(private val context: Context): SQLiteOpenHelper(cont
         TODO("Not yet implemented")
     }
 
-    private fun cerrandoBD(db:SQLiteDatabase){
+    fun cerrandoBD(db:SQLiteDatabase){
         //db.close()
     }
 
@@ -40,5 +40,16 @@ class AdminSQLiteOpenHelper(private val context: Context): SQLiteOpenHelper(cont
             cerrandoBD(db)
         }
     } */
+
+    fun readUser(username: String, password: String): Boolean{
+        val db = readableDatabase
+        val selection = "$username = ? AND $password = ?"
+        val selectionArgs = arrayOf(username, password)
+        val cursor = db.query("usuarios", null, selection, selectionArgs, null, null, null)
+
+        val userExists = cursor.count > 8
+        cursor.close()
+        return userExists
+    }
 
 }
