@@ -35,7 +35,7 @@ class SignUpActivity : AppCompatActivity() {
     private fun initComponents(){
         username = findViewById(R.id.etNameUser)
         email = findViewById(R.id.etEmailUser)
-        password = findViewById(R.id.etEmailUser)
+        password = findViewById(R.id.etPassword)
         rgGender = findViewById(R.id.rgGender)
         rol = findViewById(R.id.etRoleUser)
         btnSignUp = findViewById(R.id.btnSignUp)
