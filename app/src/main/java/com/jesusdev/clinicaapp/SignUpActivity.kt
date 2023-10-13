@@ -24,8 +24,11 @@ class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
+        db = AdminSQLiteOpenHelper(this)
         initComponents()
-        btnSignUp.setOnClickListener { signUpUser() }
+        val genderSelected = rgToString(rgGender)
+        btnSignUp.setOnClickListener { signUpUser(username.text.toString(),
+            email.text.toString(), password.text.toString(), rol.text.toString(), genderSelected) }
 
     }
 
@@ -40,32 +43,22 @@ class SignUpActivity : AppCompatActivity() {
         rbFemale = findViewById(R.id.rbFemale)
     }
 
-    private fun signUpUser(){
-        db = AdminSQLiteOpenHelper(this)
-        var db = db.writableDatabase
-        var user = username.text.toString()
-        var correo = email.text.toString()
-        var pass = password.text.toString()
-        val selectedId = rgGender.checkedRadioButtonId
-        val selectedRadioButton: RadioButton = rgGender.findViewById(selectedId)
-        val gender: String = when(selectedRadioButton.text){
-            "Masculino" -> "Masculino"
-            "Femenino" -> "Femenino"
-            else -> ""
-        }
-        var role = rol.text.toString()
+    private fun rgToString(rg: RadioGroup): String{
+        val selectedId = rg.checkedRadioButtonId
+        val selectedRadioButton: RadioButton = findViewById(selectedId)
+        return selectedRadioButton.text.toString()
+    }
 
-        if (user.isNotEmpty() && correo.isNotEmpty() && pass.isNotEmpty() && gender.isNotEmpty() && role.isNotEmpty()){
-            var registroUsuario = ContentValues()
-            registroUsuario.put("username", user)
-            registroUsuario.put("email", correo)
-            registroUsuario.put("password", pass)
-            registroUsuario.put("gender", gender)
-            registroUsuario.put("rol", role)
-            db.insert("usuarios", null, registroUsuario)
-            Toast.makeText(this, "Se registro exitosamente!", Toast.LENGTH_SHORT)
+    private fun signUpUser(username: String, email: String, password: String,
+                           rol: String, gender: String){
+        val insertedRowId = db.insertUser(username, email, password, rol, gender)
+        if(insertedRowId != -1L){
+            Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, LogInActivity::class.java)
+            startActivity(intent)
+            finish()
         } else {
-            Toast.makeText(this, "No pueden haber campos en blanco!", Toast.LENGTH_SHORT)
+            Toast.makeText(this, "Registro Fallido", Toast.LENGTH_SHORT).show()
         }
     }
 }

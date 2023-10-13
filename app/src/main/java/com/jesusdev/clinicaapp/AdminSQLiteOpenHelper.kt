@@ -6,48 +6,53 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 
-class AdminSQLiteOpenHelper(private val context: Context): SQLiteOpenHelper(context, "clinic_app", null, 1){
+class AdminSQLiteOpenHelper(private val context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
+    null, DATABASE_VERSION){
+
+    companion object{
+        private const val DATABASE_NAME = "ClinicDataBase.db"
+        private const val DATABASE_VERSION = 1
+        private const val TABLE_NAME = "usuarios"
+        private const val COLUMN_ID = "id"
+        private const val COLUMN_USERNAME = "username"
+        private const val COLUMN_EMAIL = "email"
+        private const val COLUMN_PASSWORD = "password"
+        private const val COLUMN_GENDER = "gender"
+        private const val COLUMN_ROLE = "role"
+    }
+
+
     override fun onCreate(db: SQLiteDatabase?) {
-        db!!.execSQL("CREATE TABLE usuarios(user_id INT PRIMARY KEY, username TEXT, " +
-                "user_email TEXT, user_password TEXT, user_gender TEXT, user_rol TEXT)")
+        val createTableQuery = ("CREATE TABLE $TABLE_NAME ($COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "$COLUMN_USERNAME TEXT, $COLUMN_EMAIL TEXT, $COLUMN_PASSWORD TEXT, $COLUMN_ROLE TEXT, " +
+                "$COLUMN_GENDER TEXT)")
+        db?.execSQL(createTableQuery)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("Not yet implemented")
+        val dropTableQuery = "DROP TABLE IF EXISTS $TABLE_NAME"
+        db?.execSQL(dropTableQuery)
+        onCreate(db)
     }
 
-    fun cerrandoBD(db:SQLiteDatabase){
-        //db.close()
-    }
-
-    /*fun newUser(username: String, email: String, password: String, gender: String, rol: String){
-        val db = this.writableDatabase
-        try {
-            db.beginTransaction()
-            val datos = ContentValues()
-            datos.put("Usuario", username)
-            datos.put("Correo", email)
-            datos.put("Contraseña", password)
-            datos.put("Genero", gender)
-            datos.put("Rol", rol)
-
-            db.insert("usuarios", null, datos)
-            db.setTransactionSuccessful()
-        } catch (e:java.lang.Exception){
-            e.printStackTrace()
-        } finally {
-            db.endTransaction()
-            cerrandoBD(db)
+    fun insertUser(username: String, email: String, password: String, rol: String, gender: String): Long{
+        val values = ContentValues().apply {
+            put(COLUMN_USERNAME, username)
+            put(COLUMN_EMAIL, email)
+            put(COLUMN_PASSWORD, password)
+            put(COLUMN_ROLE, rol)
+            put(COLUMN_GENDER, gender)
         }
-    } */
-
+        val db = writableDatabase
+        return db.insert(TABLE_NAME, null, values)
+    }
     fun readUser(username: String, password: String): Boolean{
         val db = readableDatabase
-        val selection = "$username = ? AND $password = ?"
+        val selection = "$COLUMN_USERNAME = ? AND $COLUMN_PASSWORD = ?"
         val selectionArgs = arrayOf(username, password)
-        val cursor = db.query("usuarios", null, selection, selectionArgs, null, null, null)
+        val cursor = db.query(TABLE_NAME, null, selection, selectionArgs, null, null, null)
 
-        val userExists = cursor.count > 8
+        val userExists = cursor.count > 0
         cursor.close()
         return userExists
     }

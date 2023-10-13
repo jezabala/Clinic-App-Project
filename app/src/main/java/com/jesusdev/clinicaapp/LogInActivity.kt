@@ -37,12 +37,12 @@ class LogInActivity : AppCompatActivity() {
     private fun loginUser(username: String, password: String){
         val userExists = db.readUser(username, password)
         if (userExists){
-            Toast.makeText(this, "Inciando Sesion", Toast.LENGTH_SHORT)
+            Toast.makeText(this, "Inciando Sesion", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainAdminActivity::class.java)
             startActivity(intent)
             finish()
         } else {
-            Toast.makeText(this, "Error al iniciar sesion", Toast.LENGTH_SHORT)
+            Toast.makeText(this, "Error al iniciar sesion", Toast.LENGTH_SHORT).show()
         }
 
     }
