@@ -110,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Introduce tu contraseña"
-                android:inputType="text" />
+                android:inputType="textPassword" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -138,15 +138,16 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <RadioGroup
-                android:id="@+id/rgGender"
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:checkedButton="@id/rbMale">
+                android:orientation="horizontal">
 
-                <androidx.appcompat.widget.LinearLayoutCompat
+                <RadioGroup
+                    android:id="@+id/rgGender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:checkedButton="@id/rbMale"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -163,16 +164,17 @@
                         android:id="@+id/rbFemale"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="30dp"
                         android:buttonTint="@color/main_color"
+                        android:layout_marginStart="30dp"
                         android:text="@string/female"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/white"/>
 
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                </RadioGroup>
 
-            </RadioGroup>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSignUp"
