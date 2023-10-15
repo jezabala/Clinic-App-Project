@@ -9,6 +9,10 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.jesusdev.clinicaapp.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
@@ -21,6 +25,7 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var btnSignUp: AppCompatButton
     private lateinit var rbMale: RadioButton
     private lateinit var rbFemale: RadioButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
