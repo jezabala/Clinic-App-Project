@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.ClinicaApp" parent="Base.Theme.ClinicaApp" />
+    
+    <style name="RadioButtonStyle" parent="Theme.AppCompat.Light">
+        <item name="colorAccent" >@color/main_color</item>
+        <item name="android:textColorPrimary">@color/black</item>
+    </style>
 </resources>

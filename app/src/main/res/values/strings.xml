@@ -8,8 +8,8 @@
     <string name="directorio_contacto">Contacto</string>
 
     <string name="login">Iniciar Sesión</string>
+    <string name="signup">Registrarse</string>
     <string name="recuperar_contraseña">Recuperar contraseña</string>
-    <string name="sign_up_main">¿No tienes una cuenta? Registrate</string>
 
     <string name="username">Usuario</string>
     <string name="password">Contraseña</string>

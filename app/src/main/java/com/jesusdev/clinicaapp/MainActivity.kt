@@ -18,12 +18,8 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.directNoticias.setOnClickListener { showDirectNoticias() }
-        binding.directServicios.setOnClickListener { showDirectServicios() }
-        binding.directMedicos.setOnClickListener { showDirectMedicos() }
-        binding.directContacto.setOnClickListener { showDirectContacto() }
         binding.btnLogin.setOnClickListener { showLogInForm() }
-        binding.tvSignUp.setOnClickListener { showSignUp() }
+        binding.btnSignUp.setOnClickListener { showSignUp() }
 
     }
 

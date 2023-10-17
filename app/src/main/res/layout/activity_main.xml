@@ -4,42 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".MainActivity"
-    android:padding="40dp">
+    android:background="#f4f4f4"
+    android:padding="40dp"
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/logo_main"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/logo_paraiso"/>
+        android:src="@drawable/logo_paraiso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
+    <!--
     <GridLayout
         android:id="@+id/directorio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:rowCount="2"
-        android:columnCount="2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_main"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="30dp"
-        android:layout_marginHorizontal="20dp">
+        android:columnCount="2"
+        android:rowCount="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_main">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/directNoticias"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"
-            android:layout_column="0"
-            android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="0"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="10dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
@@ -47,22 +47,22 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal">
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/noticia_directorio"/>
+                    android:src="@drawable/noticia_directorio" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/directorio_noticias"
                     android:textAlignment="center"
-                    android:textStyle="bold"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -73,10 +73,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"
-            android:layout_column="1"
-            android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="10dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
@@ -84,22 +84,22 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal">
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/servicios_directorio_min"/>
+                    android:src="@drawable/servicios_directorio_min" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/directorio_servicios"
                     android:textAlignment="center"
-                    android:textStyle="bold"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -110,10 +110,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
-            android:layout_column="0"
-            android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="0"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="10dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
@@ -121,22 +121,22 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal">
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/medico_directorio_min"/>
+                    android:src="@drawable/medico_directorio_min" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/directorio_medicos"
                     android:textAlignment="center"
-                    android:textStyle="bold"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -147,10 +147,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
-            android:layout_column="1"
-            android:layout_gravity="fill"
             android:layout_rowWeight="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
+            android:layout_gravity="fill"
             android:layout_margin="10dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
@@ -158,61 +158,90 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal">
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="110dp"
-                    android:src="@drawable/contacto_directorio"/>
+                    android:src="@drawable/contacto_directorio" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/directorio_contacto"
                     android:textAlignment="center"
-                    android:textStyle="bold"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
+    -->
 
-
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnLogin"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/btn_round"
-        android:text="@string/login"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_marginBottom="40dp">
-    </androidx.appcompat.widget.AppCompatButton>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_main"
+        app:layout_constraintBottom_toBottomOf="parent">
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/background_btn_into1"
+            android:text="@string/login"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/background_btn_into2"
+            android:text="@string/signup"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--
     <TextView
         android:id="@+id/tvSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnLogin"
-        android:text="@string/sign_up_main"
         android:layout_marginTop="5dp"
+        android:text="@string/sign_up_main"
+        android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textAlignment="center"/>
-
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+        -->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
