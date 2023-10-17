@@ -1,10 +1,14 @@
 package com.jesusdev.clinicaapp
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
+import android.widget.Toast
 
 class AdminSQLiteOpenHelper(private val context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
     null, DATABASE_VERSION){
@@ -46,15 +50,36 @@ class AdminSQLiteOpenHelper(private val context: Context): SQLiteOpenHelper(cont
         val db = writableDatabase
         return db.insert(TABLE_NAME, null, values)
     }
-    fun readUser(username: String, password: String): Boolean{
+    @SuppressLint("Range")
+    fun readUser(context: Context, username: String, password: String){
         val db = readableDatabase
-        val selection = "$COLUMN_USERNAME = ? AND $COLUMN_PASSWORD = ?"
-        val selectionArgs = arrayOf(username, password)
-        val cursor = db.query(TABLE_NAME, null, selection, selectionArgs, null, null, null)
+        val query = "SELECT $COLUMN_ROLE FROM $TABLE_NAME WHERE $COLUMN_USERNAME = ? AND $COLUMN_PASSWORD = ?"
+        val cursor: Cursor = db.rawQuery(query, arrayOf(username, password))
 
-        val userExists = cursor.count > 0
-        cursor.close()
-        return userExists
+        if (cursor.moveToFirst()){
+            val role = cursor.getString(cursor.getColumnIndex(COLUMN_ROLE))
+            cursor.close()
+            db.close()
+
+            when (role){
+                "USUARIO" -> {
+                    context.startActivity(Intent(context, MainPacientesActivity::class.java))
+                }
+                "ADMIN" -> {
+                    context.startActivity(Intent(context, MainAdminActivity::class.java))
+                }
+                "MEDICO" -> {
+                    context.startActivity(Intent(context, MainMedicosActivity::class.java))
+                }
+                else -> {
+                    Toast.makeText(context, "Rol no reconocido", Toast.LENGTH_SHORT)
+                }
+            }
+
+        } else {
+            cursor.close()
+            db.close()
+        }
     }
 
 }

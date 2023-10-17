@@ -1,5 +1,6 @@
 package com.jesusdev.clinicaapp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,16 +14,20 @@ class LogInActivity : AppCompatActivity() {
     private lateinit var etUsername: EditText
     private lateinit var etPassword: EditText
     private lateinit var btnLogIn: AppCompatButton
+    companion object{
+        lateinit var maincontext: Context
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
+        maincontext = this
 
-        db = AdminSQLiteOpenHelper(this)
+        db = AdminSQLiteOpenHelper(maincontext)
 
         initComponents()
 
         btnLogIn.setOnClickListener {
-            loginUser(etUsername.text.toString(), etPassword.text.toString())
+            db.readUser(maincontext, etUsername.text.toString(), etPassword.text.toString())
         }
 
 
@@ -34,17 +39,6 @@ class LogInActivity : AppCompatActivity() {
         btnLogIn = findViewById(R.id.btnLogin)
     }
 
-    private fun loginUser(username: String, password: String){
-        val userExists = db.readUser(username, password)
-        if (userExists){
-            Toast.makeText(this, "Inciando Sesion", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, MainAdminActivity::class.java)
-            startActivity(intent)
-            finish()
-        } else {
-            Toast.makeText(this, "Error al iniciar sesion", Toast.LENGTH_SHORT).show()
-        }
 
-    }
 
 }
