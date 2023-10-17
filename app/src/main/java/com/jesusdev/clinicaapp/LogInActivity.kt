@@ -28,6 +28,8 @@ class LogInActivity : AppCompatActivity() {
 
         btnLogIn.setOnClickListener {
             db.readUser(maincontext, etUsername.text.toString(), etPassword.text.toString())
+            etUsername.setText("")
+            etPassword.setText("")
         }
 
 

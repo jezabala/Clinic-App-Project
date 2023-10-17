@@ -32,8 +32,8 @@ class SignUpActivity : AppCompatActivity() {
         db = AdminSQLiteOpenHelper(this)
         initComponents()
         val genderSelected = rgToString(rgGender)
-        btnSignUp.setOnClickListener { signUpUser(username.text.toString(),
-            email.text.toString(), password.text.toString(), rol.text.toString(), genderSelected) }
+        btnSignUp.setOnClickListener { db.insertUser(username.text.toString(), email.text.toString(), password.text.toString(),
+            rol.text.toString(), genderSelected) }
 
     }
 
@@ -54,7 +54,7 @@ class SignUpActivity : AppCompatActivity() {
         return selectedRadioButton.text.toString()
     }
 
-    private fun signUpUser(username: String, email: String, password: String,
+    /*private fun signUpUser(username: String, email: String, password: String,
                            rol: String, gender: String){
         val insertedRowId = db.insertUser(username, email, password, rol, gender)
         if(insertedRowId != -1L){
@@ -65,5 +65,5 @@ class SignUpActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Registro Fallido", Toast.LENGTH_SHORT).show()
         }
-    }
+    }*/
 }
