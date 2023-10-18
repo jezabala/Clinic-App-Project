@@ -56,7 +56,7 @@
             android:hint="Nombre de usuario"
             android:paddingStart="20dp"
             android:textColor="#464646"
-            android:textColorHint="#464646"/>
+            android:textColorHint="#464646" />
 
         <EditText
             android:id="@+id/etEmailUser"
@@ -82,6 +82,7 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:hint="Contraseña"
+            android:inputType="password"
             android:paddingStart="20dp"
             android:textColor="#464646"
             android:textColorHint="#464646" />

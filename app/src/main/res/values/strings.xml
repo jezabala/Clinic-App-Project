@@ -52,6 +52,7 @@
     <string name="admin_menu2">Reportes de Citas Completadas</string>
     <string name="admin_menu3">Historial de Citas</string>
     <string name="admin_menu4">Control de Notificaciones</string>
+    <string name="admin_gestion">Gestionar medicos y usuarios.</string>
 
     <!-- Programar citas medicas -->
     <string name="pc_texto_citas">Programar Cita Médica: </string>
