@@ -1,5 +1,6 @@
 package com.jesusdev.clinicaapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.jesusdev.clinicaapp.databinding.ActivityMainAdminBinding
@@ -18,7 +19,9 @@ class MainAdminActivity : AppCompatActivity() {
     }
 
     private fun showUsers(){
-
+        val intent = Intent(this, UsuariosActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun showReports(){
