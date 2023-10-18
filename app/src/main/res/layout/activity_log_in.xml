@@ -54,7 +54,7 @@
             android:background="@drawable/edittext_background"
             android:hint="Contraseña"
             android:paddingStart="20dp"
-            android:inputType="password"
+            android:inputType="textPassword"
             android:textColor="#464646"
             android:textColorHint="#464646" />
 

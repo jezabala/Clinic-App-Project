@@ -8,6 +8,9 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
+import android.view.LayoutInflater
+import android.widget.TableLayout
+import android.widget.TextView
 import android.widget.Toast
 
 class AdminSQLiteOpenHelper(private val context: Context): SQLiteOpenHelper(context, DATABASE_NAME,
@@ -80,6 +83,19 @@ class AdminSQLiteOpenHelper(private val context: Context): SQLiteOpenHelper(cont
             cursor.close()
             db.close()
         }
+    }
+
+    fun llenarTabla(tableLayout: TableLayout){
+        val db = writableDatabase
+        val query = "SELECT $COLUMN_USERNAME FROM $TABLE_NAME"
+        val fila = db.rawQuery(query, null)
+        fila.moveToFirst()
+        do{
+            val registro = LayoutInflater.from(context).inflate(R.layout.item_tablelayout_users, null, false)
+            val tvName = registro.findViewById<TextView>(R.id.tvUsername)
+            tvName.text = fila.getString(0)
+            tableLayout.addView(registro)
+        }while (fila.moveToNext())
     }
 
 }

@@ -28,8 +28,6 @@ class LogInActivity : AppCompatActivity() {
 
         initComponents()
 
-        tvRecPassword.setOnClickListener {  }
-
         btnLogIn.setOnClickListener {
             db.readUser(maincontext, etUsername.text.toString(), etPassword.text.toString())
             etUsername.setText("")
@@ -42,7 +40,7 @@ class LogInActivity : AppCompatActivity() {
         etUsername = findViewById(R.id.etUsername)
         etPassword = findViewById(R.id.etPassword)
         tvRecPassword = findViewById(R.id.tvRecPassword)
-        btnLogIn = findViewById(R.id.btnLogin)
+        btnLogIn = findViewById(R.id.btnLogIn)
     }
 
 }
