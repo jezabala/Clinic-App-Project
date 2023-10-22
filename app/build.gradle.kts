@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.jesusdev.clinicaapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.jesusdev.clinicaapp"
