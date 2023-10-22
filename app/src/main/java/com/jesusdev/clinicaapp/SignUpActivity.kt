@@ -8,15 +8,13 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.AppCompatButton
-import com.android.volley.Request
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import com.jesusdev.clinicaapp.databinding.ActivitySignUpBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+
 
 class SignUpActivity : AppCompatActivity() {
-    private lateinit var db: AdminSQLiteOpenHelper
     private lateinit var username: EditText
     private lateinit var email: EditText
     private lateinit var password: EditText
@@ -25,15 +23,34 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var btnSignUp: AppCompatButton
     private lateinit var rbMale: RadioButton
     private lateinit var rbFemale: RadioButton
+    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
-        db = AdminSQLiteOpenHelper(this)
         initComponents()
         val genderSelected = rgToString(rgGender)
-        btnSignUp.setOnClickListener { db.insertUser(username.text.toString(), email.text.toString(), password.text.toString(),
-            rol.text.toString(), genderSelected) }
+
+        btnSignUp.setOnClickListener{
+            if (username.text.isNotEmpty() && email.text.isNotEmpty() && password.text.isNotEmpty()
+                && genderSelected.isNotEmpty() && rol.text.isNotEmpty()){
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(
+                    email.text.toString(), password.text.toString()
+                ).addOnCompleteListener {
+                    if (it.isSuccessful){
+                        db.collection("users").document(username.text.toString()).set(
+                            hashMapOf("username" to username.text.toString(),
+                                "email" to email.text.toString(),
+                                "password" to password.text.toString(),
+                                "gender" to genderSelected,
+                                "rol" to  rol.text.toString()
+                            )
+                        )
+                        showHome()
+                    } else showAlert()
+                }
+            }
+        }
 
     }
 
@@ -54,16 +71,20 @@ class SignUpActivity : AppCompatActivity() {
         return selectedRadioButton.text.toString()
     }
 
-    /*private fun signUpUser(username: String, email: String, password: String,
-                           rol: String, gender: String){
-        val insertedRowId = db.insertUser(username, email, password, rol, gender)
-        if(insertedRowId != -1L){
-            Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, LogInActivity::class.java)
-            startActivity(intent)
-            finish()
-        } else {
-            Toast.makeText(this, "Registro Fallido", Toast.LENGTH_SHORT).show()
-        }
-    }*/
+    private fun showHome(){
+        Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_LONG)
+        val mainHomeIntent = Intent(this, MainActivity::class.java)
+        startActivity(mainHomeIntent)
+        finish()
+    }
+
+    private fun showAlert(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Se ha producido un error al registrar usuario")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
 }
