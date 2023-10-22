@@ -8,14 +8,11 @@ import android.widget.TableLayout
 
 class UsuariosActivity : AppCompatActivity() {
     private lateinit var tlUsuarios: TableLayout
-    private lateinit var db: AdminSQLiteOpenHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_usuarios)
-        db = AdminSQLiteOpenHelper(this)
         initComponents()
 
-        db.llenarTabla(tlUsuarios)
 
     }
 
